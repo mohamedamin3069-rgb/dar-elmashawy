@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دار المشاوي | الافتتاح الخميس ٢٦ نوفمبر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --night:#0f2547;      /* Nubian blue */
+  --deep:#0a1a33;
+  --ember:#ee8a3a;      /* coal glow */
+  --sand:#f3e4c6;
+  --clay:#b9814f;
+  --line:rgba(243,228,198,.22);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{
+  background-color:var(--night);
+  background-image:
+    linear-gradient(45deg,rgba(243,228,198,.05) 25%,transparent 25%,transparent 75%,rgba(243,228,198,.05) 75%),
+    linear-gradient(45deg,rgba(243,228,198,.05) 25%,transparent 25%,transparent 75%,rgba(243,228,198,.05) 75%);
+  background-size:44px 44px;
+  background-position:0 0,22px 22px;
+  color:var(--sand);
+  font-family:"Tajawal",Tahoma,"Segoe UI",sans-serif;
+  line-height:1.7;
+}
+main{
+  max-width:560px;margin:0 auto;padding:36px 20px 40px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px;
+}
+.brand{
+  font-family:"Reem Kufi","Segoe UI",Tahoma,sans-serif;
+  font-weight:700;font-size:clamp(44px,13vw,68px);line-height:1.1;margin:0;color:var(--sand);
+}
+.sub{margin:14px 0 0;font-size:18px;color:var(--clay)}
+.panel{
+  width:100%;background:var(--deep);border:1px solid var(--line);
+  border-radius:18px;padding:26px 14px 22px;
+}
+.panel h2{margin:0 0 18px;font-size:20px;font-weight:500}
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.unit{display:flex;flex-direction:column;align-items:center}
+.num{
+  font-family:"Reem Kufi","Segoe UI",Tahoma,sans-serif;font-weight:700;
+  font-size:clamp(40px,14vw,66px);line-height:1.1;color:var(--ember);
+  font-variant-numeric:tabular-nums;
+}
+.lbl{font-size:15px;color:var(--sand);opacity:.85}
+.when{margin:18px 0 0;font-size:16px;opacity:.9}
+.open-msg{display:none;font-family:"Reem Kufi",sans-serif;font-size:34px;color:var(--ember);margin:6px 0}
+.done .clock,.done .when,.done h2{display:none}
+.done .open-msg{display:block}
+.btn{
+  display:inline-block;text-decoration:none;font-family:inherit;font-weight:700;font-size:17px;
+  padding:12px 22px;border-radius:12px;border:1px solid var(--ember);color:var(--sand);
+}
+.btn.main{background:var(--ember);color:var(--deep)}
+.btn:focus-visible{outline:3px solid var(--sand);outline-offset:3px}
+.btn:hover{filter:brightness(1.1)}
+.follow p{margin:0 0 12px;font-size:17px}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.links a:empty{display:none}
+footer{font-size:14px;opacity:.7;margin-top:6px}
+</style>
+</head>
+<body>
+<main id="app">
+  <div>
+    <h1 class="brand">دار المشاوي</h1>
+    <p class="sub">مشويات على أصولها، قاعدين مستنيينكم</p>
+  </div>
+
+  <section class="panel" id="panel" aria-live="polite">
+    <h2>فاضل على الافتتاح</h2>
+    <div class="clock" aria-hidden="false">
+      <div class="unit"><span class="num" id="d">٠</span><span class="lbl">يوم</span></div>
+      <div class="unit"><span class="num" id="h">٠</span><span class="lbl">ساعة</span></div>
+      <div class="unit"><span class="num" id="m">٠</span><span class="lbl">دقيقة</span></div>
+      <div class="unit"><span class="num" id="s">٠</span><span class="lbl">ثانية</span></div>
+    </div>
+    <p class="when">الخميس ٢٦ نوفمبر، الساعة ١٢ الضهر</p>
+    <p class="open-msg">فتحنا! أهلاً بيكم في دار المشاوي</p>
+  </section>
+
+  <div class="links">
+    <a class="btn main" id="cal" target="_blank" rel="noopener">ضيف الافتتاح على تقويمك</a>
+    <a class="btn" id="wa" target="_blank" rel="noopener">ابعت الميعاد لصحابك على واتساب</a>
+  </div>
+
+  <section class="follow">
+    <p>تابعنا عشان توصلك أخبار الافتتاح والعروض</p>
+    <div class="links">
+      <a class="btn" id="fb" target="_blank" rel="noopener">فيسبوك</a>
+      <a class="btn" id="ig" target="_blank" rel="noopener">إنستجرام</a>
+      <a class="btn" id="tt" target="_blank" rel="noopener">تيك توك</a>
+      <a class="btn" id="web" target="_blank" rel="noopener">الموقع</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ===== ضع روابط المكان هنا بين علامتي التنصيص. اللي يفضل فاضي مش بيظهر ===== */
+var LINKS = {
+  fb:  "https://www.facebook.com/share/1HaFgV3UWx/",   // رابط صفحة الفيسبوك
+  ig:  "https://www.instagram.com/dar.elmashawy?dmpr=MWVlaXJoZWIyNmdkNw==",   // رابط الإنستجرام
+  tt:  "https://www.tiktok.com/@dar_elmashawy?_r=1&_t=ZS-9BeVcoIbgZk",   // رابط التيك توك
+  web: "https://darelmashawy.com/ords/r/darelmashawy/darelmashawy/home"    // رابط الموقع
+};
+/* ===== ميعاد الافتتاح: الخميس ٢٦ نوفمبر ٢٠٢٦ الساعة ١٢ ظهرًا بتوقيت القاهرة ===== */
+var OPEN_AT = new Date("2026-11-26T12:00:00+02:00").getTime();
+
+(function(){
+  var nf = new Intl.NumberFormat("ar-EG");
+  function $(id){return document.getElementById(id)}
+
+  Object.keys(LINKS).forEach(function(k){
+    var a=$(k);
+    if(LINKS[k]){a.href=LINKS[k]}else{a.style.display="none"}
+  });
+
+  /* رابط التقويم: ١٢ ظهرًا بتوقيت القاهرة = ١٠:٠٠ بتوقيت جرينتش */
+  $("cal").href="https://calendar.google.com/calendar/render?action=TEMPLATE"
+    +"&text="+encodeURIComponent("افتتاح دار المشاوي")
+    +"&dates=20261126T100000Z/20261126T120000Z"
+    +"&details="+encodeURIComponent("افتتاح مطعم دار المشاوي النهارده الساعة ١٢ الضهر. نورونا!");
+
+  $("wa").href="https://wa.me/?text="+encodeURIComponent("افتتاح دار المشاوي الخميس ٢٦ نوفمبر الساعة ١٢ الضهر، نورونا! "+location.href);
+
+  function tick(){
+    var diff=OPEN_AT-Date.now();
+    if(diff<=0){
+      $("panel").classList.add("done");
+      $("cal").style.display="none";
+      $("wa").style.display="none";
+      return false;
+    }
+    var t=Math.floor(diff/1000);
+    $("d").textContent=nf.format(Math.floor(t/86400));
+    $("h").textContent=nf.format(Math.floor(t%86400/3600));
+    $("m").textContent=nf.format(Math.floor(t%3600/60));
+    $("s").textContent=nf.format(t%60);
+    return true;
+  }
+  if(tick()){
+    var iv=setInterval(function(){if(!tick())clearInterval(iv)},1000);
+  }
+})();
+</script>
+</body>
+</html>
